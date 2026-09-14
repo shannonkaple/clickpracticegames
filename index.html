@@ -6,26 +6,65 @@
   <title>STEM Click Practice</title>
 
   <style>
+    * { box-sizing: border-box; }
+
     html, body {
       margin: 0;
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background: #ffffff;
+      background: #fff;
     }
 
     .game-wrap {
-      width: 100vw;
-      height: 100vh;
+      position: fixed;
+      inset: 0;
       overflow: hidden;
+      background: #fff;
     }
 
+    /*
+      Default for larger screens.
+      The iframe is made larger, then scaled down,
+      which gives the embedded lesson more usable viewport space.
+    */
     .game-wrap iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 125%;
       height: 125%;
       border: 0;
-      transform: scale(0.8);
+      transform: scale(.80);
       transform-origin: top left;
+      background: #fff;
+    }
+
+    /* Typical Chromebook browser viewport */
+    @media (max-height: 800px) {
+      .game-wrap iframe {
+        width: 133.334%;
+        height: 133.334%;
+        transform: scale(.75);
+      }
+    }
+
+    /* Smaller student Chromebook viewport / browser bars taking space */
+    @media (max-height: 700px) {
+      .game-wrap iframe {
+        width: 142.858%;
+        height: 142.858%;
+        transform: scale(.70);
+      }
+    }
+
+    /* Extra-small viewport fallback */
+    @media (max-height: 620px) {
+      .game-wrap iframe {
+        width: 153.847%;
+        height: 153.847%;
+        transform: scale(.65);
+      }
     }
   </style>
 </head>
