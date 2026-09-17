@@ -1,80 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>STEM Click Practice</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Computer Skills Lab Lesson</title>
   <style>
-    * { box-sizing: border-box; }
-
     html, body {
       margin: 0;
+      padding: 0;
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background: #fff;
+      background: #ffffff;
     }
 
-    .game-wrap {
-      position: fixed;
-      inset: 0;
+    .viewport {
+      width: 100vw;
+      height: 100vh;
       overflow: hidden;
-      background: #fff;
+      position: relative;
     }
 
-    /*
-      Default for larger screens.
-      The iframe is made larger, then scaled down,
-      which gives the embedded lesson more usable viewport space.
-    */
-    .game-wrap iframe {
+    iframe {
+      border: 0;
       position: absolute;
       top: 0;
       left: 0;
-      width: 125%;
-      height: 125%;
-      border: 0;
-      transform: scale(.80);
+
+      /* Show the site at 75% size */
+      transform: scale(0.75);
       transform-origin: top left;
-      background: #fff;
-    }
 
-    /* Typical Chromebook browser viewport */
-    @media (max-height: 800px) {
-      .game-wrap iframe {
-        width: 133.334%;
-        height: 133.334%;
-        transform: scale(.75);
-      }
-    }
-
-    /* Smaller student Chromebook viewport / browser bars taking space */
-    @media (max-height: 700px) {
-      .game-wrap iframe {
-        width: 142.858%;
-        height: 142.858%;
-        transform: scale(.70);
-      }
-    }
-
-    /* Extra-small viewport fallback */
-    @media (max-height: 620px) {
-      .game-wrap iframe {
-        width: 153.847%;
-        height: 153.847%;
-        transform: scale(.65);
-      }
+      /* Compensate for scaling so the full screen stays filled */
+      width: 133.3334%;
+      height: 133.3334%;
     }
   </style>
 </head>
-
 <body>
-  <div class="game-wrap">
+  <div class="viewport">
     <iframe
-      src="https://www.computerskillslab.com/index.html?lesson=6527"
-      title="STEM Click Practice"
-      scrolling="no"
+      src="https://www.computerskillslab.com/index.html?lesson=8293"
+      title="Computer Skills Lab Lesson"
       allowfullscreen>
     </iframe>
   </div>
